@@ -1,0 +1,16 @@
+extends _layout
+
+block content
+  include _notify
+  if !auth
+    h1.title กรุณาเข้าสู่ระบบ
+    hr
+    .buttons
+      a.button(href="/login") เข้าสู่ระบบ
+      a.button.is-link(href="/register") สมัครสมาชิก
+  else
+    h1.title ยินดีต้อนรับ @#{auth.username}
+    hr
+    .buttons
+      a.button.is-link(href="/edit-password") แก้ไขรหัสผ่าน
+      a.button(href="/logout") ออกจากระบบ

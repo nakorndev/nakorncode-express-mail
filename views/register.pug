@@ -1,0 +1,27 @@
+extends _layout
+
+block content
+  h1.title สมัครสมาชิก
+  hr
+  form(action="/register", method="post")
+    label.label ชื่อผู้ใช้
+    .field.has-addons
+      .control
+        .button.is-static @
+      .control
+        input.input(type="text" name="username" required)
+    .field
+      .control
+        label.label ที่อยู่อีเมล
+        input.input(type="email" name="email" required)
+    .field
+      .control
+        label.label รหัสผ่าน
+        input.input(type="password" name="password" required)
+    .field
+      label.checkbox
+        input(type="checkbox" required)
+        span.ml-1 ฉันยอมรับเงื่อนไขการบริการ
+    hr
+    .field
+      button.button.is-link สมัครสมาชิก
